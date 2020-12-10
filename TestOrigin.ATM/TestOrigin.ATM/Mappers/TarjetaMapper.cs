@@ -19,6 +19,7 @@ namespace TestOrigin.ATM.Mappers
         /// <returns></returns>
         public static TarjetaVM ToTarjetaVM(this Tarjeta source)
         {
+            if (source == null) return default(TarjetaVM);
             return new TarjetaVM() { Balance = source.Balance, FechaVencimiento = source.FechaVencimiento, Numero = source.Numero };
 
         }

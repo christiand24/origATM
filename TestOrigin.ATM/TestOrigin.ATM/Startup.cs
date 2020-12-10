@@ -38,6 +38,7 @@ namespace TestOrigin.ATM
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(TokenFilter));
+                options.Filters.Add(typeof(ExceptionHandlerFilter));
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ATMContext>(options =>

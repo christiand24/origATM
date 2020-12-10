@@ -19,6 +19,7 @@ namespace TestOrigin.Business
 
         public void InsertarBalance(int tarjetId)
         {
+            if (unitOfWork.Tarjetas().Get(tarjetId) == null) throw new Exception(MsjErrores.ERROR_TJ_NO_EXISTE); 
             unitOfWork.Balances().Save(new Balance() { TarjetaId = tarjetId, FechaOperacion = DateTime.Now });
             unitOfWork.Save();
         }

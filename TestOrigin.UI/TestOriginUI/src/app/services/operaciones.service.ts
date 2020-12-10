@@ -12,11 +12,11 @@ export class OperacionesService {
 
   constructor(private http: HttpClient) { }
 
-  insertarBalance(tarjetId: number): Observable<any>
+  insertarBalance(tarjetId: number): Observable<boolean>
   {
     let filter = new HttpParams();
     filter = filter.append('tarjetId', tarjetId.toString());
-    return this.http.post(this.baseURL + 'Balance/Insertar', null, { params : filter });
+    return this.http.post<boolean>(this.baseURL + 'Balance/Insertar', null, { params : filter });
   }
 
   insertarRetiro(tarjetId: number, cantidadRetirada: number): Observable<boolean>

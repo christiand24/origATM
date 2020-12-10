@@ -30,15 +30,24 @@ namespace TestOrigin.ATM.Controllers
         }
 
         /// <summary>
-        /// Inserta balance
+        /// Inserta balance, devuelve true si inserta ok o false si la tarjeta no existe
         /// </summary>
         /// <param name="tarjetId"></param>
         // POST: api/Operacion
         [HttpPost]
         [Route("Balance/Insertar")]
-        public void InsertarBalance(int tarjetId)
+        public bool InsertarBalance(int tarjetId)
         {
-            business.InsertarBalance(tarjetId);
+            try
+            {
+                business.InsertarBalance(tarjetId);
+                return true;
+            }
+            catch (BalanceExcedidoException ex)
+            {
+                Console.Out.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         /// <summary>

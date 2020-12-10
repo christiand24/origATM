@@ -17,7 +17,9 @@ export class BalanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.tjSrv.traer(Sessions.tarjetaId).subscribe(result => this.tarjeta = result);
-    this.srvOp.insertarBalance(Sessions.tarjetaId).subscribe(result => {});
+    this.srvOp.insertarBalance(Sessions.tarjetaId).subscribe(result => {
+      //no se hace nada con el resultado
+    });
   }
 
 
