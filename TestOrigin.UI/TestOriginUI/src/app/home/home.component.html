@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label>Ingrese numero de tarjeta (16 dígitos)</label>
+  <input [(ngModel)]="numeroSeleccionadoView" class="form-control col-lg-4" type="text" readonly/>
+</div>
+
+<app-teclado (NumeroIngresado)="tecladoEvent($event)"
+  (NumeroBorrado)="numeroBorrado($event)"
+  (NumeroAceptado)="numeroAceptado($event)"
+  ></app-teclado>

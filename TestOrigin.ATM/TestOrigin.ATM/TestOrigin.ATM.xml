@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestOrigin.ATM</name>
+    </assembly>
+    <members>
+        <member name="T:TestOrigin.ATM.Controllers.OperacionController">
+            <summary>
+            Controlador de operaciones
+            </summary>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.OperacionController.#ctor(TestOrigin.Domain.Interfaces.IOperacionesBusiness)">
+            <summary>
+            constructor
+            </summary>
+            <param name="business"></param>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.OperacionController.InsertarBalance(System.Int32)">
+            <summary>
+            Inserta balance
+            </summary>
+            <param name="tarjetId"></param>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.OperacionController.InsertarRetiro(System.Int32,System.Decimal)">
+            <summary>
+            Inserta retiro y devuelve datos de operacion
+            </summary>
+            <param name="tarjetId"></param>
+            <param name="cantidadRetirada"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestOrigin.ATM.Controllers.TarjetaController">
+            <summary>
+            Controlador de tarjeta
+            </summary>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.TarjetaController.#ctor(TestOrigin.Domain.Interfaces.ITarjetaBusiness)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="business"></param>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.TarjetaController.Traer(System.Int32)">
+            <summary>
+            Recupera tarjeta
+            </summary>
+            <param name="tarjetaId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.TarjetaController.EsTarjetaOperativa(System.String)">
+            <summary>
+            Valida si tj esta operativa
+            </summary>
+            <param name="numeroTarjeta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestOrigin.ATM.Controllers.TarjetaController.ValidarPIN(System.String,System.Int32)">
+            <summary>
+            Devuelve ID tarjeta si esta ok, -1: pin incorrecto, -2: tarjeta bloqueada
+            </summary>
+            <param name="numeroTarjeta"></param>
+            <param name="PIN"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestOrigin.ATM.Filters.SwaggerAddHeaderTokenAttribute">
+            <summary>
+            Sumar parametro en el header de swagger para que pase el token de validacion, en este caso
+            como es una prueba pasa por defecto un valor por defecto para no tener que ingresar el mismo a cada rato
+            </summary>
+        </member>
+        <member name="T:TestOrigin.ATM.Mappers.TarjetaMapper">
+            <summary>
+            Convierto clase Tarjeta a TarjetaVM (se podria usar automapper pero como es solo una clase no vale la pena)
+            </summary>
+        </member>
+        <member name="M:TestOrigin.ATM.Mappers.TarjetaMapper.ToTarjetaVM(TestOrigin.Domain.Entities.Tarjeta)">
+            <summary>
+            Convierte Tarjeta a TarjetaVM
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

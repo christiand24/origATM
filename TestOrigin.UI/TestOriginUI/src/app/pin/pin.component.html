@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label>Ingrese PIN de tarjeta</label>
+  <input [(ngModel)]="numeroSeleccionadoView" class="form-control col-lg-4" type="password" readonly/>
+</div>
+
+<app-teclado (NumeroIngresado)="tecladoEvent($event)"
+  (NumeroBorrado)="numeroBorrado($event)"
+  (NumeroAceptado)="numeroAceptado($event)"
+  ></app-teclado>
+
+  <button class="btn btn-light btn-lg mt-2" [routerLink]="['/home']">Salir</button>

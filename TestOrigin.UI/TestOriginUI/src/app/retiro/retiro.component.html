@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label>Ingrese dinero a retirar</label>
+  <input [(ngModel)]="numeroSeleccionadoView" class="form-control col-lg-4" type="text" readonly/>
+</div>
+
+<app-teclado (NumeroIngresado)="tecladoEvent($event)"
+  (NumeroBorrado)="numeroBorrado($event)"
+  (NumeroAceptado)="numeroAceptado($event)"
+  ></app-teclado>
+
+
+  <button class="btn btn-light btn-lg" [routerLink]="['/home']">Salir</button>
